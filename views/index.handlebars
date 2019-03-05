@@ -1,0 +1,36 @@
+{{!-- This file is what will be passed into the "body" of main.handlebars on our index page --}}
+{{!-- this acts with main.handlebars as the core html of our home page --}}
+
+<h1>Eat Da Burger!</h1>
+<ul>
+    {{#each burger}}
+    {{#unless this.devoured}}
+        <li>
+            <p><span class="item">{{this.id}}. {{this.burger_name}}</span></p>
+            <button data-id="{{this.id}}" class="eatburg">Devour</button>
+        </li>
+    {{/unless}}
+    {{/each}}
+</ul>
+
+<h2>You ate this already...</h2>
+<ul>
+    {{#each burger}}
+    {{#if this.devoured}}
+        <li>
+            <p><span class="item">{{this.id}}. {{this.burger_name}}</span></p>
+        </li>
+    {{/if}}
+    {{/each}}
+</ul>
+
+<h2>Add a Burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="burg">Burger Name:</label>
+    <input type="text" id="burg" name="name">
+  </div>
+
+  <button type="submit">Add Burger</button>
+</form>

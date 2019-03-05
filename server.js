@@ -14,7 +14,7 @@ app.set("view engine", "handlebars");
 //Within handlebars, sets the default layout within views folder to main.handlebars file
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 
-//serving the static files to epxress
+//serving the static files to express -- express creates the routes for these files
 //static files = front end files that client downloads from server 
 app.use(express.static("public"));
 
