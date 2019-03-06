@@ -3,8 +3,9 @@
 
 $(document).ready(function() {
     $(".eatburg").on("click", function(event) {
-        var id = $(this).data("id");
+        var id = $(this).attr("data-id");
         var devoured = {
+          burger_name: $(this).burger_name,
           devoured: true
         };
 

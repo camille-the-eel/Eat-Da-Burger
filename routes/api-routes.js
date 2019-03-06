@@ -21,18 +21,18 @@ module.exports = function(app) {
     });
 
     //UPDATE A BURGER NAME
-    app.put("/api/burgers/:id", function (req, res) {
-        db.Burger.update(
-            {
-            burger_name: req.body.burger_name
-            }, 
-            {
-            where: {id: req.params.id}
-            }
-        ).then(function(data) {
-            res.json(data);
-        });
-    });
+    // app.put("/api/burgers/:id", function (req, res) {
+    //     db.Burger.update(
+    //         {
+    //         burger_name: req.body.burger_name
+    //         }, 
+    //         {
+    //         where: {id: req.params.id}
+    //         }
+    //     ).then(function(data) {
+    //         res.json(data);
+    //     });
+    // });
 
     //UPDATE A BURGER BOOLEAN STATUS
     app.put("/api/burgers/:id", function (req, res) {
