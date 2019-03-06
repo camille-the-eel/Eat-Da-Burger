@@ -3,14 +3,14 @@ var db = require("../models");
 
 module.exports = function(app) {
 
-    // select all
+    //SELECT ALL BURGERS
     app.get("/api/burgers", function (req, res) {
         db.Burger.findAll().then(function(data) {
             res.json(data);
         });
     });
 
-    // insert one
+    //CREATE A BURGER
     app.post("/api/burgers", function (req, res) {
         db.Burger.create({
             burger_name: req.body.burger_name,
@@ -20,7 +20,7 @@ module.exports = function(app) {
         });
     });
 
-    // update one
+    //UPDATE A BURGER NAME
     app.put("/api/burgers/:id", function (req, res) {
         db.Burger.update(
             {
@@ -34,4 +34,17 @@ module.exports = function(app) {
         });
     });
 
+    //UPDATE A BURGER BOOLEAN STATUS
+    app.put("/api/burgers/:id", function (req, res) {
+        db.Burger.update(
+            {
+            devoured: req.body.devoured
+            }, 
+            {
+            where: {id: req.params.id}
+            }
+        ).then(function(data) {
+            res.json(data);
+        });
+    });
 };

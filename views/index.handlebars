@@ -5,7 +5,7 @@
 
 <h2>These burgers are waiting to be devoured...</h2>
 <ul>
-    {{#each burger}}
+    {{#each Burger}}
     {{#unless this.devoured}}
         <li>
             <p><span class="item">{{this.id}}. {{this.burger_name}}</span></p>
@@ -17,7 +17,7 @@
 
 <h2>You ate this already...</h2>
 <ul>
-    {{#each burger}}
+    {{#each Burger}}
     {{#if this.devoured}}
         <li>
             <p><span class="item">{{this.id}}. {{this.burger_name}}</span></p>

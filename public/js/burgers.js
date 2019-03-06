@@ -4,7 +4,9 @@
 $(document).ready(function() {
     $(".eatburg").on("click", function(event) {
         var id = $(this).data("id");
-        var devoured = $(this).data("devoured");
+        var devoured = {
+          devoured: true
+        };
 
         $.ajax("/api/burgers/" + id, {
             type: "PUT",
