@@ -2,6 +2,8 @@
 {{!-- this acts with main.handlebars as the core html of our home page --}}
 
 <h1>Eat Da Burger!</h1>
+
+<h2>These burgers are waiting to be devoured...</h2>
 <ul>
     {{#each burger}}
     {{#unless this.devoured}}
@@ -32,5 +34,5 @@
     <input type="text" id="burg" name="name">
   </div>
 
-  <button type="submit">Add Burger</button>
+  <button type="submit" class="create-form">Add Burger</button>
 </form>

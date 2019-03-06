@@ -1,13 +1,15 @@
 //Sequelize Table Model
 
-module.exports = function (sequelize, DataType) {
+module.exports = function (sequelize, DataTypes) {
   var Burger = sequelize.define("Burger", {
     burger_name: {
-      type: DataType.STRING,
+      type: DataTypes.STRING,
       allowNull: false
     }, 
     devoured: { 
-      type: DataType.BOOLEAN,
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false
     }
   }, 
   {

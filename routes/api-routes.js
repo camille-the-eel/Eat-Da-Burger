@@ -5,9 +5,8 @@ module.exports = function(app) {
 
     // select all
     app.get("/api/burgers", function (req, res) {
-        db.Burger.findAll().then(function(result) {
-            console.log(result);
-            res.render("index", { Burger: result });
+        db.Burger.findAll().then(function(data) {
+            res.json(data);
         });
     });
 
